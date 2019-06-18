@@ -1,0 +1,77 @@
+$font-stack:    'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$main-color: #404040;
+$header-color: #27aedb;
+$border-color: #888;
+$message-color: rgba(255, 0, 0, 0.2);
+$reset-color: #006600;
+
+body {
+    font: 100% $font-stack;
+    color: $main-color;
+
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .field-container{
+        position: relative;
+    }
+    
+    h1 {
+        color: $header-color;
+        text-align: center;
+    }
+    
+    table {
+        color: $message-color;
+        border: $border-color solid 2px;
+        border-collapse: collapse;
+        width: 306px;
+    }
+    
+    td {
+          border: $border-color solid 2px;
+          font-size: 80px;
+          text-align: center;
+        width: 100px;
+        height: 100px;
+    }
+    img {
+        width: 50px;
+        height: 50px;
+    }
+    
+    button {
+          width: 300px;
+          padding: 10px;
+          background-color: $reset-color;
+          color: white;
+          margin-top: 30px;
+    }
+    
+    #resetButton {
+          background-color: $message-color;
+          width: 315px;
+          margin-left: 0px;
+          margin-right: 0px;
+     }
+    
+     .point-counter {
+        color: $header-color;
+        font-size: 24px;
+        margin-bottom: 30px;
+     }
+    
+     .result-message {
+        background-color: $message-color; 
+        position: absolute;
+        top: 130px;
+        left: 50px;
+        font-size: 30px;
+        padding: 20px;
+        border-radius: 20%
+     }
+}
+
