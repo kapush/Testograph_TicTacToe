@@ -46,7 +46,7 @@ class Game extends Component {
 
     reset = () => {
         let compMove = "";
-        if(!this.state.humanStarts){
+        if(this.state.humanStarts){//предыдущий стейт - человек начинал
             compMove = "X";
         }
         this.setState({
@@ -60,29 +60,33 @@ class Game extends Component {
     }
 
 
-    continueGame = (XrowCell) => {
+    continueGame = (rowCell) => {
         
         //ход крестика
-        this.makeMove(XrowCell, Globals.X); 
+        this.makeMove(rowCell, this.state.humanStarts); 
         
-        if(this.gameOver(XrowCell)){
+        if(this.gameOver(rowCell)){
+            const pointsXInc = this.state.humanStarts ? 1 : 0;
+            const points0Inc = this.state.humanStarts ? 0 : 1;
             this.setState({
-                roundResult: this.state.humanStarts ? Globals.HUMAN_WON : Globals.COMPUTER_WON,
-                pointsX: this.state.pointsX+1,
-                points0: this.state.points0,
+                roundResult: Globals.HUMAN_WON,
+                pointsX: this.state.pointsX + pointsXInc,
+                points0: this.state.points0 + points0Inc,
                 disabled: true
             });
             return;
         };
 
-        const ORowCell = this.calcMove(XrowCell);
-        this.makeMove(ORowCell, Globals.O);
+        rowCell = this.calcMove(rowCell);
+        this.makeMove(rowCell, !this.state.humanStarts);
         
-        if(this.gameOver(ORowCell)){
+        if(this.gameOver(rowCell)){
+            const pointsXInc = this.state.humanStarts ? 0 : 1;
+            const points0Inc = this.state.humanStarts ? 1 : 0;
             this.setState({
-                roundResult: this.state.humanStarts ? Globals.COMPUTER_WON : Globals.HUMAN_WON,
-                pointsX: this.state.pointsX,
-                points0: this.state.points0+1,
+                roundResult: Globals.COMPUTER_WON,
+                pointsX: this.state.pointsX + pointsXInc,
+                points0: this.state.points0 + points0Inc,
                 disabled: true
             });
             return;
