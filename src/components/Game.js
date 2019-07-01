@@ -46,7 +46,7 @@ class Game extends Component {
 
     reset = () => {
         let compMove = "";
-        if(this.state.humanStarts){//предыдущий стейт - человек начинал
+        if(this.state.humanStarts){
             compMove = "X";
         }
         this.setState({
@@ -62,7 +62,6 @@ class Game extends Component {
 
     continueGame = (rowCell) => {
         
-        //ход крестика
         this.makeMove(rowCell, this.state.humanStarts); 
         
         if(this.gameOver(rowCell)){

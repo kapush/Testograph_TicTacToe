@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "homepage": "https://github.com/kapush/Testograph_TicTacToe.git",
+  "homepage": "https://kapush.github.io/Testograph_TicTacToe/",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --mode development --open --hot",
     "build": "webpack --mode production",
-    "deploy": "gh-pages -d examples/dist",
+    "deploy": "gh-pages -d dist",
     "publish-demo": "npm run build && npm run deploy"
   },
   "author": "",

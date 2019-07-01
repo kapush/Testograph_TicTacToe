@@ -17,16 +17,6 @@ class FieldTable extends Component {
         );
     }
 
-    /*shouldComponentUpdate(nextProps, nextState){
-        if(nextProps.humanStarts !== this.props.humanStarts){
-            if(!this.props.humanStarts){
-                this.props.continueGame({i:1, j:1});
-            }
-            return false;
-        }
-        return true;
-    }*/
-
     handleClick = e => {
         const {disabled, 
             continueGame} = this.props;
