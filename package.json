@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "homepage": "https://github.com/kapush/Testograph_TicTacToe.git",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --mode development --open --hot",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "deploy": "gh-pages -d examples/dist",
+    "publish-demo": "npm run build && npm run deploy"
   },
   "author": "",
   "license": "ISC",
@@ -17,6 +20,8 @@
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.6",
     "css-loader": "^3.0.0",
+    "gh-pages": "^2.0.1",
+    "gh-pages-webpack-plugin": "^1.0.2",
     "html-webpack-plugin": "^3.2.0",
     "node-sass": "^4.12.0",
     "sass-loader": "^7.1.0",
